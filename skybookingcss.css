@@ -1,0 +1,553 @@
+* {
+  box-sizing: border-box; }
+
+i {
+  font-weight: normal; }
+
+body {
+  position: relative; }
+
+.headerback {
+  background-color: #1f2746;
+  text-align: center;
+  color: white; }
+  .headerback .nav1 .navit1 {
+    width: 120px;
+    margin-right: 10px; }
+  .headerback .nav1 .navli1 {
+    max-width: 100%;
+    height: 100%;
+    padding: 17px;
+    color: white;
+    font-weight: bold; }
+  .headerback .nav1 .navli1:hover, .headerback .nav1 .actived {
+    background-color: #161b31;
+    border-top: 3px solid #cb2a82; }
+
+.headertop {
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
+  animation-name: topheader;
+  animation-duration: .5s;
+  animation-fill-mode: backwards; }
+
+@keyframes topheader {
+  from {
+    top: -50%; }
+  to {
+    top: 0px; } }
+.about, .blog {
+  position: relative; }
+
+.aboutdropmenu, .pagesdropmenu, .blogdropmenu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  background-color: #161b31;
+  width: 250px;
+  text-align: left; }
+  .aboutdropmenu .nav-item:hover, .pagesdropmenu .nav-item:hover, .blogdropmenu .nav-item:hover {
+    background-color: #1f2746; }
+    .aboutdropmenu .nav-item:hover .aboutli, .pagesdropmenu .nav-item:hover .aboutli, .blogdropmenu .nav-item:hover .aboutli {
+      color: #42d4ec; }
+      .aboutdropmenu .nav-item:hover .aboutli .riarr1, .pagesdropmenu .nav-item:hover .aboutli .riarr1, .blogdropmenu .nav-item:hover .aboutli .riarr1 {
+        display: inline-block; }
+  .aboutdropmenu .aboutli, .pagesdropmenu .aboutli, .blogdropmenu .aboutli {
+    color: white;
+    width: 100%;
+    margin: 10px 0 10px 15px; }
+    .aboutdropmenu .aboutli .riarr1, .pagesdropmenu .aboutli .riarr1, .blogdropmenu .aboutli .riarr1 {
+      display: none; }
+
+.pagesdropmenu {
+  right: 0%;
+  width: 980px;
+  z-index: 1;
+  overflow: hidden; }
+  .pagesdropmenu .headeritem {
+    background-color: #1f2746;
+    color: white;
+    padding: 8px 13px 8px 13px;
+    margin-top: 1px; }
+
+.barmenu {
+  position: relative; }
+  .barmenu .barlink, .barmenu .barlink2, .barmenu .barlink:hover, .barmenu .barlink2:hover {
+    color: white;
+    font-size: 35px;
+    padding: 5px 20px 5px 20px;
+    margin: 0;
+    animation-name: bar2tra;
+    animation-iteration-count: 1;
+    animation-duration: .5s; }
+  .barmenu .barlink2 {
+    display: none;
+    animation-name: bartra;
+    animation-iteration-count: 1;
+    animation-duration: .5s; }
+
+.righbarmenu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  margin-top: 0;
+  margin-top: 3px;
+  padding: 0;
+  height: auto;
+  overflow: auto;
+  width: auto;
+  background-color: #1f2746;
+  animation: righmen;
+  animation-iteration-count: 1;
+  animation-duration: .5s; }
+  .righbarmenu .about2, .righbarmenu .blog2, .righbarmenu .pages2 {
+    position: relative;
+    width: 100%; }
+  .righbarmenu .dropmenuabout2, .righbarmenu .dropmenublog2, .righbarmenu .dropmenupages2 {
+    display: none;
+    left: 0%; }
+  .righbarmenu .itemri {
+    text-align: left;
+    width: 250px; }
+  .righbarmenu .itemrili, .righbarmenu .dropmenuabout2 .itemrili2, .righbarmenu .dropmenublog2 .itemrili2, .righbarmenu .dropmenupages2 .itemrili2 {
+    color: white;
+    width: 100%;
+    padding: 10px; }
+  .righbarmenu .itemrili:hover, .righbarmenu .dropmenuabout2 .itemrili2:hover, .righbarmenu .dropmenublog2 .itemrili2:hover, .righbarmenu .dropmenupages2 .itemrili2:hover {
+    color: white;
+    background-color: #cb2a82; }
+
+@keyframes righmen {
+  from {
+    right: 10%; }
+  to {
+    right: 0; } }
+@keyframes bar2tra {
+  from {
+    transform: rotate(45deg); }
+  to {
+    transform: rotate(0deg); } }
+@keyframes bartra {
+  from {
+    transform: rotate(-45deg); }
+  to {
+    transform: rotate(0deg); } }
+.searchbox {
+  display: none;
+  position: absolute;
+  right: 2%;
+  background-color: white;
+  animation-name: seabox;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+  animation-duration: 0.5s; }
+@keyframes seabox {
+  from {
+    right: -70px; }
+  to {
+    right: 2%; } }
+  .searchbox .searchtext {
+    width: 250px;
+    height: 40px;
+    border-width: 0px;
+    outline-width: 0px; }
+  .searchbox .searchicon {
+    color: #cb2a82;
+    width: 20px;
+    margin: 0;
+    margin-right: 10px; }
+  .searchbox .searchicon:hover {
+    color: #42d4ec; }
+  .searchbox .foc:focus-within {
+    border: 2px solid #161b31; }
+
+.booking {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  padding: 50px 0 50px 0;
+  background-image: url(images/bg_1.jpg);
+  background-attachment: scroll;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  animation-name: backgrani;
+  animation-iteration-count: infinite;
+  animation-duration: 20s;
+  animation-delay: 3s;
+  animation-fill-mode: forwards;
+  animation-direction: reverse;
+  animation-timing-function: cubic-bezier(0, 0, 0, 0); }
+  .booking .ulbook {
+    border-bottom: 0px; }
+  .booking .bookitem {
+    border-right: 1px solid #1f2746;
+    border-radius: 15px 15px 0 0; }
+    .booking .bookitem .booklink {
+      color: white;
+      background-color: #42d4ec;
+      border: 1px solid #42d4ec;
+      width: 100%; }
+    .booking .bookitem .active {
+      color: white;
+      background-color: #1f2746;
+      border: 1px solid #1f2746;
+      width: 100%; }
+  .booking .contentt {
+    background-color: #1f2746;
+    color: white;
+    margin: 0;
+    border-radius: 0px 10px 10px 10px; }
+
+@keyframes backgrani {
+  0% {
+    background-image: url(images/bg_1.jpg); }
+  33.3% {
+    background-image: url(images/bg_2.jpg); }
+  66.6% {
+    background-image: url(images/bg_3.jpg); } }
+.flightform {
+  font-weight: bold; }
+  .flightform .inputel {
+    height: 45px; }
+  .flightform .inputel:focus-within {
+    box-shadow: 0px 0px;
+    border-width: 0px;
+    outline: none; }
+  .flightform .labels {
+    color: gray;
+    font-weight: normal; }
+  .flightform .undercheck {
+    font-weight: normal; }
+  .flightform .search {
+    position: relative;
+    background-color: #cb2a82;
+    color: white;
+    border: 0px;
+    height: 45px; }
+    .flightform .search .searchicon {
+      display: none; }
+  .flightform .search:hover {
+    background-color: rgba(203, 42, 130, 0.8); }
+    .flightform .search:hover .searchicon {
+      display: block; }
+    .flightform .search:hover .serchtext {
+      display: none; }
+  .flightform select {
+    position: relative; }
+    .flightform select .optionall {
+      color: #42d4ec; }
+
+.partner {
+  background-color: #faf4f1;
+  position: relative;
+  padding: 60px 25px; }
+  .partner .partnersize {
+    width: 170px;
+    margin: 8px; }
+  .partner .partnerimg {
+    display: block;
+    margin: auto; }
+
+.advantage, .blogstrick {
+  margin-bottom: 50px;
+  text-align: center; }
+  .advantage .why, .blogstrick .why {
+    text-align: center;
+    color: #42d4ec;
+    font-size: 20px; }
+  .advantage .advapara, .advantage .blogsbara, .blogstrick .advapara, .blogstrick .blogsbara {
+    text-align: center;
+    color: #161b31; }
+    .advantage .advapara .advanborder, .advantage .advapara .blogborder, .advantage .blogsbara .advanborder, .advantage .blogsbara .blogborder, .blogstrick .advapara .advanborder, .blogstrick .advapara .blogborder, .blogstrick .blogsbara .advanborder, .blogstrick .blogsbara .blogborder {
+      border-bottom: 2px solid #cb2a82;
+      margin: 20px 70px 0 70px; }
+  .advantage .advanicon, .blogstrick .advanicon {
+    color: #cb2a82;
+    font-size: 60px; }
+  .advantage .divicon, .blogstrick .divicon {
+    border: 1px solid transparent;
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; }
+  .advantage .hr, .blogstrick .hr {
+    border-color: #42d4ec;
+    width: 50px; }
+
+.ourtime {
+  background-color: #1f2746;
+  color: white;
+  text-align: center; }
+  .ourtime .intouchbutt {
+    color: white;
+    background-color: #cb2a82;
+    border: 0px;
+    width: 250px;
+    height: 50px;
+    font-size: 25px; }
+  .ourtime .intouchbutt:hover {
+    background-color: deeppink;
+    color: white;
+    text-decoration: none; }
+
+.blogcarousel {
+  background-clip: border-box;
+  background-attachment: local;
+  background-position: center;
+  background-origin: border-box;
+  background-size: cover;
+  height: 500px;
+  position: relative; }
+
+.backdiv {
+  text-align: left;
+  padding: 50px 25px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 80%;
+  height: 100%; }
+  .backdiv .artticlelink {
+    color: white;
+    background-color: #cb2a82;
+    border: 0px;
+    padding: 5px 15px;
+    display: inline-block; }
+  .backdiv .artticlelink:hover {
+    background-color: deeppink;
+    color: white;
+    text-decoration: none; }
+  .backdiv .articlehead {
+    color: white;
+    text-decoration: mone; }
+  .backdiv .articlehead:hover {
+    color: deeppink;
+    text-decoration: none; }
+  .backdiv .articmore {
+    color: #42d4ec;
+    text-decoration: none; }
+  .backdiv .articmore:hover {
+    text-decoration: none;
+    color: white; }
+
+.backdiv2 {
+  position: relative;
+  text-align: left;
+  height: 100%;
+  background-color: white; }
+  .backdiv2 .imgcolart {
+    height: 200px; }
+  .backdiv2 .articlelink2 {
+    color: white;
+    background-color: #cb2a82;
+    border: 0px;
+    padding: 5px 15px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    margin: 20px; }
+  .backdiv2 .articlelink2:hover {
+    background-color: deeppink;
+    color: white;
+    text-decoration: none; }
+
+.viewdiv {
+  margin: 20px 0px; }
+  .viewdiv .viewbutton {
+    color: white;
+    background-color: #cb2a82;
+    font-size: 20px;
+    padding: 20px 60px;
+    margin-bottom: 20px; }
+  .viewdiv .viewbutton:hover {
+    background-color: deeppink;
+    text-decoration: none;
+    color: white; }
+
+.hotdeals .nav-item {
+  margin: 5px 1px; }
+.hotdeals .hotintro {
+  margin: 20px; }
+.hotdeals .hotofferslink {
+  color: gray;
+  border: 0.5px solid lightgray;
+  padding: 10px 20px; }
+.hotdeals .hotofferslink:hover {
+  background-color: deeppink;
+  color: white; }
+.hotdeals .activedofferlin {
+  background-color: #42d4ec;
+  color: white; }
+
+.gridgallerycontainer {
+  width: 100%;
+  margin: 0; }
+
+.gallerycontainercolumn {
+  margin: 0;
+  padding: 0;
+  width: 20%;
+  overflow: hidden; }
+
+.galleryimage {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  object-position: center; }
+
+.gallerydiv {
+  overflow: hidden;
+  padding: 0px;
+  margin: 0;
+  position: relative; }
+
+.gallerydetail {
+  position: absolute;
+  display: flex;
+  top: 0%;
+  justify-content: center;
+  align-content: center;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%;
+  color: white; }
+  .gallerydetail p, .gallerydetail a {
+    display: none; }
+  .gallerydetail .textanima {
+    animation-name: gallerytextani;
+    animation-iteration-count: 1;
+    animation-duration: 1;
+    animation-fill-mode: both; }
+
+.gallerydetail:hover {
+  background-color: rgba(31, 39, 70, 0.5); }
+  .gallerydetail:hover p, .gallerydetail:hover a {
+    display: block; }
+
+@keyframes gallerytextani {
+  from {
+    top: 50%; }
+  to {
+    top: 0; } }
+.gallerylink, .footer .footercardlink {
+  color: white;
+  text-decoration: none; }
+
+.gallerylink:hover, .footer .footercardlink:hover {
+  color: deeppink;
+  text-decoration: none; }
+
+@media screen and (min-width: 0px) {
+  .gallerycontainercolumn {
+    width: 100%; } }
+@media screen and (min-width: 576px) {
+  .gallerycontainercolumn {
+    width: 50%; } }
+@media screen and (min-width: 768px) {
+  .gallerycontainercolumn {
+    width: 33.33%; } }
+@media screen and (min-width: 922px) {
+  .gallerycontainercolumn {
+    width: 20%; } }
+.footer {
+  margin-top: 80px;
+  background-color: #1f2746;
+  height: 100%;
+  color: white;
+  text-align: left; }
+  .footer hr {
+    background-color: #42d4ec;
+    width: 50px;
+    height: 3px;
+    text-align: left;
+    position: absolute; }
+  .footer .footercardlink:hover {
+    color: #42d4ec; }
+  .footer #footercaro p {
+    color: lightgray;
+    padding-bottom: 60px;
+    font-family: cursive; }
+  .footer .contactele {
+    background-color: #161b31;
+    color: white;
+    border: 0px;
+    width: 100%;
+    margin: 5px;
+    padding: 10px; }
+  .footer .send {
+    height: 55px;
+    width: 50%;
+    margin: 5px;
+    padding: 15px;
+    color: white;
+    background-color: #cb2a82;
+    border: 0px;
+    font-size: 20px;
+    position: relative; }
+  .footer .sendicon {
+    display: none;
+    position: absolute;
+    text-align: center;
+    animation-name: sendiconani;
+    animation-duration: .2s;
+    animation-fill-mode: both; }
+@keyframes sendiconani {
+  from {
+    top: 60%; }
+  to {
+    top: 30%;
+    left: 45%;
+    transform: rotate(45deg); } }
+  .footer .send:hover {
+    background-color: deeppink; }
+    .footer .send:hover .sendtextx {
+      display: none; }
+    .footer .send:hover .sendicon {
+      display: block; }
+  .footer .socialfooter {
+    border-top: 1px solid #faf4f1;
+    padding: 20px 20px 20px 0px; }
+    .footer .socialfooter .sociallink {
+      color: white;
+      background-color: #cb2a82;
+      border: 0px;
+      background-color: transparent;
+      margin: 10px; }
+    .footer .socialfooter .sociallink:hover {
+      background-color: deeppink;
+      color: white;
+      text-decoration: none;
+      background-color: transparent; }
+    .footer .socialfooter .copypara {
+      color: #faf4f1;
+      text-align: right; }
+    @media screen and (max-width: 768px) {
+      .footer .socialfooter .copypara {
+        text-align: left; } }
+  .footer .topthetop {
+    display: none;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border: 2px solid transparent;
+    color: white;
+    background-color: #cb2a82;
+    border: 0px;
+    padding: 12px;
+    z-index: 1; }
+  .footer .topthetop:hover {
+    background-color: deeppink;
+    color: white;
+    text-decoration: none; }
+
+/*# sourceMappingURL=skybookingcss.css.map */

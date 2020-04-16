@@ -1,0 +1,1013 @@
+$colorlight:#1f2746 ;
+$colordark:#161b31 ;
+$pink:#cb2a82 ;
+$deepink:deeppink;
+$sky:#42d4ec ;
+$whitefon:white ;
+$darkcolor:black ;
+$graycolor:gray ;
+$lightgray1:#faf4f1;
+
+@mixin borderradi
+{
+    border-width:2px;
+    border-radius:15px 15px; 
+}
+
+
+@mixin buttonforall($padding:0px)
+{
+        color:$whitefon;
+        background-color: $pink;
+        border: 0px;
+    }
+
+
+@mixin buttonforallhover
+{
+    background-color: $deepink ;
+    color:$whitefon;
+    text-decoration: none;
+}
+
+
+*
+{
+    box-sizing: border-box;
+    //max-width: 100%;
+}
+
+
+i
+{
+    font-weight: normal;
+}
+
+
+body
+{
+    position:relative;
+}
+
+
+.headerback
+{
+    background-color: $colorlight ;
+    text-align: center ;
+    color:$whitefon ;
+    .nav1
+    {
+        .navit1
+        {
+            width:120px;
+            margin-right:10px;
+        }
+        .navli1
+        {
+            max-width: 100%;
+            height: 100%;
+            padding: 17px;
+            color: $whitefon ;
+            font-weight: bold;
+            
+        }
+        .navli1:hover , .actived
+        {
+            background-color: $colordark ;
+            border-top: 3px solid $pink ;
+        }
+        
+    }
+}
+
+
+.headertop
+{
+    position: fixed;
+    width:100%;
+    top: 0px;
+    z-index: 1 ;
+    animation-name:topheader;
+    animation-duration:.5s;
+    animation-fill-mode: backwards;
+    
+}
+
+@keyframes topheader
+{
+    from
+    {
+        top:-50%;
+    }
+    to
+    {
+        top:0px;
+    }
+}
+
+.about , .blog 
+{
+    position: relative ;
+}
+
+
+.aboutdropmenu , .blogdropmenu 
+{
+    display: none; 
+    position: absolute;
+    z-index: 1;
+    background-color: $colordark ;
+    width:250px;
+    text-align: left;
+    
+    .nav-item:hover
+    {
+       background-color:$colorlight; 
+        .aboutli
+        {
+            color:$sky;
+            .riarr1
+            {
+                display:inline-block;
+            }
+        }
+    }
+    
+
+    .aboutli
+    { 
+        color: $whitefon;
+        width: 100%;
+        margin:10px 0 10px 15px;
+        .riarr1
+        {
+            display: none;
+            
+        }
+        
+        
+    }
+    
+    
+    
+}
+
+
+.pagesdropmenu
+{
+    @extend .aboutdropmenu;
+    right:0%;
+    width:980px;
+    z-index: 1 ;
+    overflow: hidden;
+    .headeritem
+    {
+        background-color:$colorlight ;
+        color: $whitefon ;
+        padding: 8px 13px 8px 13px ;
+        margin-top:1px;
+    }
+    
+}
+
+
+.barmenu
+{
+     position:relative;
+    .barlink,.barlink:hover
+    {
+        color:$whitefon;
+        font-size: 35px;
+        padding: 5px 20px 5px 20px ; 
+        margin: 0 ;
+        animation-name:bar2tra;
+        animation-iteration-count: 1;
+        animation-duration:.5s;
+    }
+    .barlink2
+    {
+        @extend .barlink;
+        display: none;
+        animation-name:bartra;
+        animation-iteration-count: 1;
+        animation-duration:.5s;
+        
+    }
+}
+
+
+.righbarmenu
+{
+        display: none;
+        position: absolute;
+         z-index: 1 ;
+        //position: relative; 
+        right:0;
+        margin-top:0;
+        margin-top:3px;
+        padding: 0;
+        height: auto;
+        overflow:auto;
+        width:auto;
+        background-color:$colorlight ; 
+        animation:righmen;
+        animation-iteration-count:1;
+        animation-duration: .5s;
+        .about2, .blog2 ,.pages2
+
+    {
+        position: relative;
+        width: 100%;
+    }
+    .dropmenuabout2,.dropmenublog2 ,.dropmenupages2 
+    {
+        display:none;
+        left:0%;
+        .itemrili2
+        {
+            @extend .itemrili ;
+        }
+        
+        
+    }
+        .itemri
+        {
+           text-align: left;
+            width:250px;
+        }
+        .itemrili
+        {
+            color: $whitefon ;
+            width: 100%;
+            padding:10px ;
+        }
+        .itemrili:hover
+        {
+           color: $whitefon ;
+            background-color: $pink;
+           
+        }
+        
+       
+    }
+ 
+
+@keyframes righmen
+{
+    from{right:10%;}
+    to{right:0 ;}
+}
+
+
+@keyframes bar2tra
+{
+   from
+    {
+        transform: rotate(45deg)
+    }
+    to
+    {
+        transform: rotate(0deg);
+    }
+}
+
+
+@keyframes bartra 
+{
+   from
+    {
+        transform: rotate(-45deg)
+    }
+    to
+    {
+        transform: rotate(0deg);
+    } 
+}
+  
+.searchbox
+{
+    
+    display:none;
+    position: absolute;
+    right:2%;
+     background-color: $whitefon;
+    animation-name: seabox ;
+    animation-timing-function:ease-out;
+    animation-fill-mode: both;
+    animation-duration: .5s ;
+ 
+    @keyframes seabox
+    {
+        from{ right:-70px;}
+        to{right:2%;}
+    }
+    .searchtext
+    {
+        width:250px;
+        height:40px;
+        border-width: 0px;
+        outline-width: 0px;
+    }
+    .searchicon
+    {
+        color:$pink ;
+       
+        width:20px;
+        margin:0 ;
+        margin-right: 10px;
+    }
+    .searchicon:hover
+    {
+        color:$sky ;
+    }
+    .foc:focus-within
+    {
+      border: 2px solid $colordark ;  
+    }
+}
+
+
+.booking
+{
+   position:relative;
+    overflow: hidden;
+    width:100%;
+    height: auto;
+    padding:50px 0 50px 0 ;
+    background-image:url(images/bg_1.jpg) ;
+    background-attachment: scroll;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-origin: border-box;
+    animation-name:backgrani;
+    animation-iteration-count: infinite;
+    animation-duration:20s;
+    animation-delay:3s;
+    animation-fill-mode:forwards;
+    animation-direction:reverse ;
+    
+    animation-timing-function:cubic-bezier(0,0,0,0);
+    
+    .ulbook
+    { 
+        border-bottom: 0px; 
+    }
+    
+    .bookitem
+    {
+        //background-color:$Sky;
+        border-right: 1px solid $colorlight;
+        border-radius:15px 15px 0 0;
+        
+        .booklink
+        {
+            color:$whitefon ;
+            background-color:$sky;
+            border:1px solid $sky;
+            width:100%; 
+        }
+       
+        .active 
+        { 
+            color:$whitefon;
+            background-color:$colorlight; 
+            border:1px solid $colorlight;
+            width:100%;
+        }
+    }
+    
+    .contentt
+    {
+        background-color:$colorlight;
+        color:$whitefon;
+        margin: 0;  
+        border-radius:0px 10px 10px 10px;
+    }
+}
+
+
+@keyframes backgrani
+{
+    0%
+    {
+         background-image: url(images/bg_1.jpg);
+    }
+    
+    33.3%
+    {
+        background-image: url(images/bg_2.jpg);
+    }
+    
+    66.6%
+    {
+        background-image: url(images/bg_3.jpg);
+    }
+}
+
+
+.flightform
+{
+    font-weight: bold;
+    
+    .inputel
+    {
+        height:45px;
+    }
+    .inputel:focus-within
+    {
+        box-shadow:0px 0px ;
+        border-width: 0px;;
+        outline:none;
+        //background-color:$pink;
+    }
+    .labels
+    {
+        color:gray ;
+        font-weight: normal;  
+    }
+    .undercheck
+    {
+        font-weight: normal;
+    }
+    .search
+    {
+        position: relative;
+        background-color:$pink;
+        color:$whitefon;
+        border:0px;
+        height:45px;
+        
+        .searchicon
+        {
+            display: none;
+        }
+        
+    }
+    
+    
+    .search:hover
+    {
+        background-color: rgba($pink,.8);
+        
+        .searchicon
+        {
+            display: block;
+        }
+        .serchtext
+        {
+            display: none;
+        }
+    }
+    
+    select 
+    {
+        position:relative;
+         .optionall
+        {
+            color:$sky;
+            
+        }
+    
+    }
+    
+   
+}
+
+
+.partner
+{
+    background-color:$lightgray1;
+    position: relative;
+    padding:60px 25px;
+    .partnersize
+    {
+        width:170px;
+        //height:80px;
+        margin:8px ;
+    }
+    .partnerimg
+    {
+        display: block;
+        margin: auto;
+    }
+}
+
+
+.advantage ,.blogstrick
+{
+    margin-bottom:50px;
+    text-align: center;
+    
+    .why
+    {
+        text-align: center;
+        color:$sky ;
+        font-size:20px;
+    }
+    
+    .advapara,.blogsbara
+    {
+        text-align: center;
+        color:$colordark;
+         .advanborder ,.blogborder
+        {
+            border-bottom:2px solid $pink;
+            margin: 20px 70px 0 70px;
+        }
+    }
+    
+    .advanicon
+    {
+        color:$pink;
+        font-size:60px;
+        
+    }
+    
+    .divicon
+    {
+        border:1px solid transparent;
+        display: block;
+        margin: auto;
+        width: 100px;
+        height:100px;
+        //padding:10px;
+        border-radius:50%;
+    }
+    
+    .hr
+    {
+        border-color:$sky;
+        width: 50px;
+    }
+}
+   
+
+.ourtime
+{
+    background-color: $colorlight ;
+    color:$whitefon;
+    text-align: center;
+     .intouchbutt
+    {
+        @include buttonforall;
+        width:250px;
+        height:50px;
+        font-size:25px;
+    }
+    .intouchbutt:hover
+    {
+        @include buttonforallhover;
+    }
+}
+
+
+.blogcarousel
+{
+    
+    background-clip: border-box;
+    background-attachment: local;
+    background-position: center;
+    background-origin: border-box;
+    background-size: cover;
+    height: 500px;
+    position:relative;
+    //z-index: -1;
+    
+     
+    
+    
+}
+
+
+.backdiv
+{
+    text-align: left;
+    padding:50px 25px; ;
+    color: $whitefon;
+    background-color:rgba(0,0,0,.5);
+    width:80%;
+    height:100%;
+    
+    
+    .artticlelink
+    {
+        @include buttonforall;
+        padding:5px 15px;
+        display: inline-block;
+        
+    }
+    .artticlelink:hover
+    {
+        @include buttonforallhover; 
+    }
+    .articlehead
+    {
+        color:$whitefon ;
+        text-decoration: mone;
+        
+        
+    }
+    .articlehead:hover
+    {
+        color: $deepink;
+        text-decoration: none;
+    }
+    .articmore
+    {
+        color: $sky ;
+        text-decoration:none;
+    }
+    .articmore:hover{
+        text-decoration: none; 
+        color: $whitefon ;
+    }
+}
+
+
+.backdiv2
+{
+    position: relative;
+    text-align: left;
+    height:100%;
+    background-color:$whitefon; 
+    .imgcolart
+    {
+        height:200px;
+        
+        
+    }
+   .articlelink2
+    {
+        @include buttonforall ;
+        padding: 5px 15px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        margin: 20px;
+        
+    }
+    .articlelink2:hover
+    {
+        @include buttonforallhover;
+    }
+   
+}
+
+// inside blog strick 1 
+.viewdiv
+{
+    margin:20px 0px ;
+    .viewbutton
+    {
+        color:$whitefon;
+        background-color:$pink;
+        font-size:20px;
+        padding:20px 60px;
+        margin-bottom:20px;
+    }
+    .viewbutton:hover
+    {
+        background-color: $deepink;
+        text-decoration:none;
+        color:$whitefon;
+    }
+    
+}
+
+// inside blogstrike 2 
+.hotdeals
+{
+    .nav-item
+    {
+        margin:5px 1px;
+    }
+    .hotintro
+    {
+        margin:20px;
+    }
+    
+    .hotofferslink
+    {
+        color:gray;
+        border: .5px solid lightgray ;
+        padding:10px 20px;
+        
+    }
+    .hotofferslink:hover
+    {
+        background-color:$deepink;
+        color:$whitefon;
+        
+    }
+    .activedofferlin
+    {
+        background-color:$sky;
+        color: $whitefon;
+        
+        
+    }
+    
+    
+    
+}
+
+
+//all gallery style inside hotdeals
+.gridgallerycontainer
+{
+    width:100%;
+    margin:0;
+    
+}
+
+
+.gallerycontainercolumn
+{
+    margin:0;
+    padding:0;
+    width:20%; 
+    overflow:hidden;
+}
+
+
+.galleryimage
+{
+    width:100%;
+    height:100%;
+    margin: 0px;
+    padding:0px; 
+    object-position: center;
+}
+
+
+.gallerydiv
+{
+    overflow: hidden;
+    padding:0px;
+    margin: 0; 
+    position: relative;
+    
+}
+
+
+.gallerydetail
+{
+    position: absolute ;
+    display: flex;
+    top:0%;
+    
+    justify-content: center;
+    align-content:center;
+    vertical-align:middle;
+    width: 100%;
+    height: 100%;
+    //background-color:rgba(#1f2746,.5);
+    color: $whitefon;
+    p,a
+    {
+        display:none;
+    } 
+    .textanima
+    {
+        animation-name: gallerytextani;
+        animation-iteration-count: 1;
+        animation-duration: 1;
+        animation-fill-mode: both;
+    }
+}
+
+
+.gallerydetail:hover
+{
+    background-color:rgba(#1f2746,.5);
+    p,a
+    {
+    
+    display:block;
+    }
+}
+
+
+@keyframes gallerytextani 
+{
+    from
+    {
+        top:50%;;
+    }
+    to
+    {
+        top: 0;
+    }
+}
+
+
+.gallerylink
+{
+    color:$whitefon;
+    text-decoration: none;
+}
+
+
+.gallerylink:hover
+{
+    color:$deepink;
+    text-decoration: none;
+}
+
+
+//gallery show on different screen
+@media screen and ( min-width: 0px ) 
+{
+  .gallerycontainercolumn
+    {
+        width:100%;
+    }
+
+}
+
+
+@media screen and ( min-width: 576px ) 
+{
+  .gallerycontainercolumn
+    {
+        width:50%;
+    }
+
+}
+
+
+@media screen and ( min-width: 768px ) 
+{
+  .gallerycontainercolumn
+    {
+        width:33.33%;
+    }
+
+}
+
+
+@media screen and ( min-width: 922px ) 
+{
+  .gallerycontainercolumn
+    {
+        width:20%;
+    }
+
+}
+
+//footer style 
+.footer
+{
+    margin-top:80px;
+    background-color:$colorlight;
+    height:100%; 
+    color:$whitefon;
+    text-align: left;
+    hr
+    {
+        background-color:$sky; 
+        width:50px;
+        height:3px;
+        text-align: left;
+        position: absolute;
+        //left: 0px;
+    }
+    .footercardlink
+    {
+        @extend .gallerylink ;
+    }
+    .footercardlink:hover
+    {
+        color:$sky;
+    }
+    
+    #footercaro
+    {
+        p
+        {
+            color:lightgray;
+            padding-bottom:60px ;
+            font-family:cursive;
+        }
+    }
+    
+    .contactele
+    {
+        background-color:$colordark;
+        color: $whitefon;
+        border:0px ;
+        width: 100%;
+        margin:5px;
+        padding: 10px;
+        
+    }
+    
+    .send
+    {
+        height:55px;
+        width: 50%;
+        margin:5px;
+        padding:15px;
+        color:$whitefon;
+        background-color:$pink;
+        border:0px ;
+        font-size:20px;
+        position: relative;
+        
+    }
+    .sendicon
+        {
+            display: none;
+            position: absolute;
+            text-align: center;
+            animation-name: sendiconani;
+            animation-duration: .2s;
+            animation-fill-mode: both;
+        }
+    @keyframes sendiconani
+    {
+        from
+        {
+            top:60%;
+            
+        }
+        to
+        {
+            top:30%;
+            left:45%;
+            transform: rotate(45deg);
+        }
+    }
+    .send:hover
+    {
+        background-color: $deepink;
+        .sendtextx
+        {
+            display: none;
+        }
+        .sendicon
+        {
+            display: block;
+        }
+        
+    }
+    
+    .socialfooter
+    {
+        border-top: 1px solid $lightgray1 ;
+        padding: 20px 20px 20px 0px;
+        
+        .sociallink
+        {
+            @include buttonforall;
+            background-color:transparent;
+            margin:10px ;
+        }
+        .sociallink:hover
+        {
+            @include buttonforallhover;
+            background-color:transparent;
+        }
+        
+        .copypara
+        {
+            color: $lightgray1 ;
+            text-align: right;
+        }
+        
+        @media screen and ( max-width: 768px )
+        {
+            .copypara
+            {
+                text-align: left;
+            }
+        }
+        
+        
+    }
+    
+    .topthetop
+    {
+        display: none;
+        position:fixed ;
+        bottom:10%;
+        right: 5%;
+        width:50px;
+        height:50px;
+        text-align: center;
+        border:2px solid transparent;
+        @include buttonforall ;
+        padding:12px;
+        z-index: 1;
+        //border-radius:50%;
+        
+    }
+    .topthetop:hover{
+        @include buttonforallhover;
+    }
+    
+
+}
+
+
